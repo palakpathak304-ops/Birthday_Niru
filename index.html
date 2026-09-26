@@ -1,0 +1,1303 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Niru 💗</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #35105c, #090018 60%);
+    color: white;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: fixed;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(circle, white 1px, transparent 2px);
+    background-size: 100px 100px;
+    opacity: 0.5;
+    animation: starMove 10s linear infinite;
+}
+
+.stars::before {
+    background-image:
+        radial-gradient(circle, #ffd6ef 1px, transparent 2px);
+    background-size: 160px 160px;
+    opacity: 0.5;
+}
+
+@keyframes starMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100px);
+    }
+
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    z-index: 5;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    width: 100%;
+    max-width: 620px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    padding: 40px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.5);
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+
+    font-size: clamp(38px, 8vw, 70px);
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff70b7,
+            #ffffff,
+            #c9a1ff
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+h2 {
+
+    color: #ffacd8;
+
+    font-size: 32px;
+
+    margin-bottom: 18px;
+
+}
+
+p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #eeeeee;
+
+}
+
+.small {
+
+    color: #ffb8dc;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    margin-top: 25px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f9a,
+            #8c5cf6
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255,70,160,0.3);
+
+    transition: 0.3s;
+
+}
+
+button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+
+    font-size: 110px;
+
+    animation:
+        giftShake 1.5s infinite;
+
+}
+
+@keyframes giftShake {
+
+    0%,100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-6deg);
+    }
+
+    75% {
+        transform: rotate(6deg);
+    }
+
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+input {
+
+    margin-top: 20px;
+
+    width: 80%;
+    max-width: 300px;
+
+    padding: 14px 20px;
+
+    border-radius: 25px;
+
+    border: 2px solid rgba(255,255,255,0.3);
+
+    background: rgba(255,255,255,0.12);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    outline: none;
+
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+#error {
+
+    color: #ff8fba;
+
+    margin-top: 15px;
+
+    display: none;
+
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo {
+
+    width: 210px;
+    height: 210px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 0 40px rgba(255,100,190,0.8);
+
+    margin: 20px auto;
+
+    display: block;
+
+    animation: photoGlow 3s infinite;
+
+}
+
+@keyframes photoGlow {
+
+    50% {
+        transform: scale(1.05);
+    }
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+
+    font-size: 100px;
+
+    animation:
+        cakeBounce 2s infinite;
+
+}
+
+@keyframes cakeBounce {
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+
+    position: fixed;
+
+    font-size: 60px;
+
+    bottom: -100px;
+
+    z-index: 3;
+
+    animation:
+        balloonFly 8s linear infinite;
+
+}
+
+.balloon1 {
+    left: 5%;
+}
+
+.balloon2 {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.balloon3 {
+    right: 25%;
+    animation-delay: 4s;
+}
+
+.balloon4 {
+    right: 5%;
+    animation-delay: 1s;
+}
+
+@keyframes balloonFly {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    z-index: 30;
+
+    pointer-events: none;
+
+    animation:
+        heartFly 5s linear forwards;
+
+}
+
+@keyframes heartFly {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(0)
+            scale(0.5);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-110vh)
+            scale(1.5)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+
+    position: fixed;
+
+    top: -20px;
+
+    z-index: 50;
+
+    font-size: 20px;
+
+    animation:
+        confettiFall 4s linear forwards;
+
+}
+
+@keyframes confettiFall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+
+}
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
+.firework {
+
+    position: fixed;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    z-index: 60;
+
+    animation:
+        fireworkBoom 1s ease-out forwards;
+
+}
+
+@keyframes fireworkBoom {
+
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(25);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.finalTitle {
+
+    font-size:
+        clamp(42px, 10vw, 85px);
+
+    animation:
+        finalPulse 1.5s infinite;
+
+}
+
+@keyframes finalPulse {
+
+    50% {
+        transform: scale(1.05);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .card {
+        padding: 30px 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .photo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .balloon {
+        font-size: 40px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- STARS -->
+
+<div class="stars"></div>
+
+
+<!-- BALLOONS -->
+
+<div class="balloon balloon1">🎈</div>
+<div class="balloon balloon2">🎈</div>
+<div class="balloon balloon3">🎈</div>
+<div class="balloon balloon4">🎈</div>
+
+
+<!-- =========================
+     SCREEN 1
+========================= -->
+
+<section
+    class="screen"
+    id="screen1"
+>
+
+<div class="card">
+
+    <div class="gift">
+        🎁
+    </div>
+
+    <div class="small">
+        Hey Niru... 💗
+    </div>
+
+    <h1>
+        Something Special
+        Is Waiting For You
+    </h1>
+
+    <p>
+        This little surprise was
+        made especially for you. ✨
+        <br><br>
+        Are you ready?
+    </p>
+
+    <button onclick="showScreen(2)">
+        YES! I'M READY 💗
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 2 PASSWORD
+========================= -->
+
+<section
+    class="screen hidden"
+    id="screen2"
+>
+
+<div class="card">
+
+    <div style="font-size:80px;">
+        🔐
+    </div>
+
+    <h2>
+        Secret Entry
+    </h2>
+
+    <p>
+        Only Niru can open this surprise. 👀
+        <br>
+        Enter the secret password.
+    </p>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+    >
+
+    <br>
+
+    <button onclick="checkPassword()">
+        🔓 Unlock
+    </button>
+
+    <div id="error">
+        Hmm... that's not the secret password! 😜
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 3 GIFT
+========================= -->
+
+<section
+    class="screen hidden"
+    id="screen3"
+>
+
+<div class="card">
+
+    <div class="gift">
+        🎁
+    </div>
+
+    <h2>
+        You Found It! 🎉
+    </h2>
+
+    <p>
+        Your birthday surprise
+        is finally unlocked.
+        <br><br>
+        But there's still more...
+    </p>
+
+    <button onclick="showScreen(4)">
+        OPEN THE GIFT 🎁
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 4 PHOTO
+========================= -->
+
+<section
+    class="screen hidden"
+    id="screen4"
+>
+
+<div class="card">
+
+    <div class="small">
+        Someone very special... 💗
+    </div>
+
+    <h1>
+        Happy Birthday
+        Niru! 🎂
+    </h1>
+
+    <img
+        src="Birthday_Niru-page-1.jpg"
+        alt="Niru"
+        class="photo"
+    >
+
+    <p>
+        Today is your day.
+        <br>
+        A day to celebrate your smile,
+        your dreams and everything
+        that makes you special. 🌸
+    </p>
+
+    <button onclick="showScreen(5)">
+        READ YOUR LETTER 💌
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 5 LETTER
+========================= -->
+
+<section
+    class="screen hidden"
+    id="screen5"
+>
+
+<div class="card">
+
+    <h2>
+        💌 A Letter For Niru
+    </h2>
+
+    <div class="letter">
+
+        <p>
+
+            Dear Niru,
+
+            <br><br>
+
+            On your special day,
+            I just want to wish you
+            all the happiness in the world. 💗
+
+            <br><br>
+
+            May your dreams become
+            beautiful realities.
+
+            May you always have a reason
+            to smile and people around you
+            who make your life brighter.
+
+            <br><br>
+
+            May this new year of your life
+            bring you beautiful memories,
+            exciting adventures,
+            success and countless moments
+            worth remembering. ✨
+
+            <br><br>
+
+            Keep smiling.
+            Keep shining.
+            And always be yourself. 🌸
+
+            <br><br>
+
+            You deserve a beautiful year ahead.
+
+            <br><br>
+
+            With lots of love and best wishes,
+
+            <br>
+
+            💗✨
+
+        </p>
+
+    </div>
+
+    <button onclick="showScreen(6)">
+        ONE LAST THING... 🎂
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 6 WISH
+========================= -->
+
+<section
+    class="screen hidden"
+    id="screen6"
+>
+
+<div class="card">
+
+    <div class="cake">
+        🎂
+    </div>
+
+    <h2>
+        Make A Wish ✨
+    </h2>
+
+    <p>
+        Close your eyes...
+        <br><br>
+        Think of something
+        you really want.
+        <br><br>
+        Now make your wish
+        and blow out the candles. 🕯️
+    </p>
+
+    <button onclick="makeWish()">
+        🕯️ MAKE MY WISH
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 7 FINAL
+========================= -->
+
+<section
+    class="screen hidden"
+    id="screen7"
+>
+
+<div class="card">
+
+    <div style="font-size:70px;">
+        🎆
+    </div>
+
+    <h1 class="finalTitle">
+        HAPPY BIRTHDAY
+        <br>
+        NIRU! 🎉
+    </h1>
+
+    <p>
+
+        🎂 May your wishes come true.
+
+        <br><br>
+
+        💗 May your smile never fade.
+
+        <br><br>
+
+        ✨ May this year bring
+        you countless beautiful memories.
+
+        <br><br>
+
+        🌸 Keep smiling.
+        Keep shining.
+        Keep being YOU.
+
+        <br><br>
+
+        <b>
+            Have the most amazing
+            birthday ever! 🥳💗
+        </b>
+
+    </p>
+
+    <button onclick="celebrateAgain()">
+        🎆 CELEBRATE AGAIN
+    </button>
+
+</div>
+
+</section>
+
+
+<script>
+
+
+/* =========================
+   SCREEN CHANGE
+========================= */
+
+function showScreen(number) {
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(function(screen) {
+
+            screen.classList.add("hidden");
+
+        });
+
+
+    document
+        .getElementById("screen" + number)
+        .classList.remove("hidden");
+
+
+    createHearts(10);
+
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+function checkPassword() {
+
+    const password =
+        document.getElementById("password")
+        .value
+        .trim();
+
+
+    if (
+        password.toUpperCase()
+        === "NIRU2026"
+    ) {
+
+        document
+            .getElementById("error")
+            .style.display = "none";
+
+
+        createHearts(20);
+
+        setTimeout(function() {
+
+            showScreen(3);
+
+        }, 500);
+
+    }
+
+    else {
+
+        document
+            .getElementById("error")
+            .style.display = "block";
+
+    }
+
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+
+    const emojis = [
+        "💗",
+        "💖",
+        "💕",
+        "💓",
+        "✨",
+        "🌸"
+    ];
+
+
+    heart.innerHTML =
+        emojis[
+            Math.floor(
+                Math.random() *
+                emojis.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.fontSize =
+        (18 + Math.random() * 25)
+        + "px";
+
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4)
+        + "s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 8000);
+
+}
+
+
+function createHearts(number) {
+
+    for (
+        let i = 0;
+        i < number;
+        i++
+    ) {
+
+        setTimeout(function() {
+
+            createHeart();
+
+        }, i * 100);
+
+    }
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti() {
+
+    const item =
+        document.createElement("div");
+
+    item.className = "confetti";
+
+
+    const emojis = [
+        "🎉",
+        "💗",
+        "✨",
+        "🌸",
+        "💜",
+        "🎊"
+    ];
+
+
+    item.innerHTML =
+        emojis[
+            Math.floor(
+                Math.random() *
+                emojis.length
+            )
+        ];
+
+
+    item.style.left =
+        Math.random() * 100 + "vw";
+
+
+    item.style.animationDuration =
+        (3 + Math.random() * 3)
+        + "s";
+
+
+    document.body.appendChild(item);
+
+
+    setTimeout(function() {
+
+        item.remove();
+
+    }, 6000);
+
+}
+
+
+/* =========================
+   FIREWORK
+========================= */
+
+function createFirework() {
+
+    const firework =
+        document.createElement("div");
+
+    firework.className =
+        "firework";
+
+
+    firework.style.left =
+        Math.random() * 90 + 5
+        + "vw";
+
+
+    firework.style.top =
+        Math.random() * 70 + 5
+        + "vh";
+
+
+    document.body.appendChild(firework);
+
+
+    setTimeout(function() {
+
+        firework.remove();
+
+    }, 1000);
+
+}
+
+
+/* =========================
+   MAKE WISH
+========================= */
+
+function makeWish() {
+
+    createHearts(60);
+
+
+    for (
+        let i = 0;
+        i < 50;
+        i++
+    ) {
+
+        setTimeout(function() {
+
+            createConfetti();
+
+        }, i * 60);
+
+    }
+
+
+    for (
+        let i = 0;
+        i < 25;
+        i++
+    ) {
+
+        setTimeout(function() {
+
+            createFirework();
+
+        }, i * 180);
+
+    }
+
+
+    setTimeout(function() {
+
+        showScreen(7);
+
+        finalCelebration();
+
+    }, 1800);
+
+}
+
+
+/* =========================
+   FINAL CELEBRATION
+========================= */
+
+function finalCelebration() {
+
+    createHearts(100);
+
+
+    for (
+        let i = 0;
+        i < 100;
+        i++
+    ) {
+
+        setTimeout(function() {
+
+            createConfetti();
+
+        }, i * 40);
+
+    }
+
+
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
+
+        setTimeout(function() {
+
+            createFirework();
+
+        }, i * 150);
+
+    }
+
+}
+
+
+/* =========================
+   CELEBRATE AGAIN
+========================= */
+
+function celebrateAgain() {
+
+    finalCelebration();
+
+}
+
+
+/* =========================
+   BACKGROUND HEARTS
+========================= */
+
+setInterval(function() {
+
+    createHeart();
+
+}, 1200);
+
+
+</script>
+
+</body>
+
+</html>
+```
